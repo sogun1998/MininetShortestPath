@@ -123,17 +123,11 @@ PATH_SETUP_TIME = 4
  
 
 def _get_raw_path (src,dst):
-
   #Bellman-Ford algorithm
-
   #print "src=",src," dst=",dst
-
   distance = {}
-
   previous = {}
-
   sws = switches.values()
-
  
 
   for dpid in sws:
@@ -231,7 +225,7 @@ def _get_path (src, dst, first_port, final_port):
   """
 
   # Start with a raw path...
-
+  print "Start time : ",time.ctime(time.time())
   if src == dst:
 
     path = [src]
@@ -244,7 +238,8 @@ def _get_path (src, dst, first_port, final_port):
 
     print "src=",src," dst=",dst
 
-    print time.time(),": ",path
+    print "End time",time.ctime(time.time())
+    print "Shortest Path : ", path
 
  
 
